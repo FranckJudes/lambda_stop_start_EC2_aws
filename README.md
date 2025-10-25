@@ -295,6 +295,7 @@ aws cloudwatch put-metric-alarm \
 
 
 # Test d'intégration Terraform
+```
 terraform plan
 terraform apply
 ```
