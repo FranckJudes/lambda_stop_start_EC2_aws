@@ -59,7 +59,6 @@ graph TB
     C -->|StopInstances| E[EC2 Instances<br/>Tag: AutoStop=true]
     F[IAM Role] -->|Permissions| B
     F -->|Permissions| C
-    G[S3 Backend] -->|State| H[Terraform]
 ```
 
 ### 🔧 Composants
@@ -101,7 +100,7 @@ graph TB
 ### 1. Cloner le projet
 
 ```bash
-git clone https://github.com/votre-username/learn-terraform-get-started-aws.git
+git clone https://github.com/FranckJudes/learn-terraform-get-started-aws.git
 cd learn-terraform-get-started-aws
 ```
 
@@ -294,35 +293,6 @@ aws cloudwatch put-metric-alarm \
 
 ## 🛠️ Développement
 
-### Corrections nécessaires
-
-1. **Erreur dans `code/main.py`** :
-   ```python
-   # ❌ Ligne 1 actuelle
-   from nt import environ
-   
-   # ✅ Correction
-   from os import environ
-   ```
-
-2. **Référence incorrecte dans `01_lambda.tf`** :
-   ```hcl
-   # ❌ Référence actuelle
-   role = aws_iam_role.role.arn
-   
-   # ✅ Correction
-   role = aws_iam_role.iam_for_lambda.arn
-   ```
-
-3. **Compléter la configuration CloudWatch** :
-   - Ajouter les targets pour déclencher les Lambda
-   - Configurer les permissions CloudWatch
-
-### Tests
-
-```bash
-# Test unitaire du code Python
-python3 -m pytest tests/
 
 # Test d'intégration Terraform
 terraform plan
@@ -352,7 +322,7 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ## 📞 Support
 
-- **Issues** : [GitHub Issues](https://github.com/votre-username/learn-terraform-get-started-aws/issues)
+- **Issues** : [GitHub Issues](https://github.com/FranckJudes/learn-terraform-get-started-aws/issues)
 - **Discussions** : [GitHub Discussions](https://github.com/votre-username/learn-terraform-get-started-aws/discussions)
 - **Email** : votre-email@example.com
 
@@ -362,6 +332,6 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 **⭐ N'hésitez pas à donner une étoile si ce projet vous a aidé !**
 
-Made with ❤️ by [Votre Nom](https://github.com/votre-username)
+Made with ❤️ by [Franck Judes](https://github.com/FranckJudes)
 
 </div>
